@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nombre": "Residencial Los Álamos",
+    "tipo": "Departamento",
+    "distrito": "Miraflores",
+    "precio": "280,000",
+    "moneda": "USD",
+    "badge": "En Venta",
+    "badgeType": "default",
+    "imagen": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+    "destacado": false
+  },
+  {
+    "id": 2,
+    "nombre": "Torre Empresarial San Isidro",
+    "tipo": "Oficina",
+    "distrito": "San Isidro",
+    "precio": "4,800",
+    "moneda": "USD/mes",
+    "badge": "Destacado",
+    "badgeType": "gold",
+    "imagen": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    "destacado": true
+  },
+  {
+    "id": 3,
+    "nombre": "Casa Jardín La Molina",
+    "tipo": "Casa",
+    "distrito": "La Molina",
+    "precio": "520,000",
+    "moneda": "USD",
+    "badge": "En Venta",
+    "badgeType": "default",
+    "imagen": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+    "destacado": false
+  },
+  {
+    "id": 4,
+    "nombre": "Local Prime Larcomar",
+    "tipo": "Local Comercial",
+    "distrito": "Miraflores",
+    "precio": "3,200",
+    "moneda": "USD/mes",
+    "badge": "En Alquiler",
+    "badgeType": "default",
+    "imagen": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    "destacado": false
+  }
+]
