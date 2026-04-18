@@ -8,7 +8,10 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-[640px] flex items-center text-white overflow-hidden">
+    <section
+      id="inicio"
+      className="relative min-h-[640px] flex flex-col text-white overflow-hidden"
+    >
       {/* Background */}
       <div
         className="absolute inset-0"
@@ -18,8 +21,9 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative w-full">
-        <div className="max-w-container mx-auto px-6 md:px-10 pt-[120px] pb-[160px]">
+      {/* Main content — crece para empujar el stats bar al fondo */}
+      <div className="relative flex-1 flex items-center">
+        <div className="max-w-container mx-auto px-6 md:px-10 py-24">
           <span className="eyebrow on-dark">Inmobiliaria de confianza</span>
           <h1
             className="mt-5 max-w-[16ch] leading-[1.05]"
@@ -60,16 +64,18 @@ export default function Hero() {
             </a>
             <a
               href="#contacto"
-              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium rounded border transition-all duration-200 hover:bg-white"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium rounded border transition-all duration-200"
               style={{ borderColor: 'rgba(255,255,255,0.7)', color: 'white' }}
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
               }}
               onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = 'white';
                 (e.currentTarget as HTMLAnchorElement).style.color = 'var(--green)';
               }}
               onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
                 (e.currentTarget as HTMLAnchorElement).style.color = 'white';
               }}
             >
@@ -77,38 +83,38 @@ export default function Hero() {
             </a>
           </div>
         </div>
+      </div>
 
-        {/* Stats bar */}
-        <div
-          className="absolute left-0 right-0 bottom-0 border-t"
-          style={{
-            borderColor: 'rgba(255,255,255,0.18)',
-            background: 'linear-gradient(180deg, rgba(13,70,53,0) 0%, rgba(10,55,40,0.35) 100%)',
-          }}
-        >
-          <div className="max-w-container mx-auto px-6 md:px-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3">
-              {stats.map((s, i) => (
-                <div
-                  key={i}
-                  className="py-6 flex flex-col gap-1 border-t sm:border-t-0 sm:border-l sm:px-6 first:border-l-0 first:pl-0"
-                  style={{ borderColor: 'rgba(255,255,255,0.12)' }}
+      {/* Stats bar — siempre al fondo, fuera del flex-1 */}
+      <div
+        className="relative border-t"
+        style={{
+          borderColor: 'rgba(255,255,255,0.18)',
+          background: 'linear-gradient(180deg, rgba(13,70,53,0) 0%, rgba(10,55,40,0.35) 100%)',
+        }}
+      >
+        <div className="max-w-container mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-3">
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                className="py-5 flex flex-col gap-1 border-l px-3 sm:px-6 first:border-l-0 first:pl-0"
+                style={{ borderColor: 'rgba(255,255,255,0.12)' }}
+              >
+                <span
+                  className="font-light"
+                  style={{ fontSize: 'clamp(20px, 4vw, 28px)', letterSpacing: '-0.02em' }}
                 >
-                  <span
-                    className="font-light"
-                    style={{ fontSize: '28px', letterSpacing: '-0.02em' }}
-                  >
-                    {s.num}
-                  </span>
-                  <span
-                    className="text-xs uppercase tracking-widest"
-                    style={{ color: 'rgba(255,255,255,0.7)' }}
-                  >
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+                  {s.num}
+                </span>
+                <span
+                  className="uppercase tracking-wider leading-tight"
+                  style={{ fontSize: 'clamp(9px, 1.8vw, 12px)', color: 'rgba(255,255,255,0.7)' }}
+                >
+                  {s.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
