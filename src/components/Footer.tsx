@@ -15,7 +15,7 @@ const serviciosLinks = [
 ];
 
 const contactoLinks = [
-  { label: '+51 983 579 443', href: 'tel:+51983579443' },
+  { label: '+51 983 579 443', href: 'tel:+51942900207' },
   { label: 'contacto@grupoitasa.pe', href: 'mailto:contacto@grupoitasa.pe' },
   { label: 'San Isidro, Lima — Perú', href: '#' },
 ];

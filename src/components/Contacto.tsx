@@ -23,8 +23,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Teléfono',
-    value: '+51 983 579 443',
-    href: 'tel:+51983579443',
+    value: '+51 942 900 027',
+    href: 'tel:+51942900027',
   },
   {
     icon: (
